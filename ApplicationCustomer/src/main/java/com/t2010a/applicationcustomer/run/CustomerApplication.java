@@ -97,7 +97,7 @@ public class CustomerApplication {
             System.err.println("404, Customer not found!");
         } else {
             System.out.println("Please enter name");
-            String Name = scanner.nextLine();
+            String Name = scanner.next();
             existingCustomer.setName(Name);
             if (customerModel.update(Id, existingCustomer) != null) {
                 System.out.println("Action success!");
