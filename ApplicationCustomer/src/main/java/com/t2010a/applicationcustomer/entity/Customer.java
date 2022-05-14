@@ -1,4 +1,6 @@
 package com.t2010a.applicationcustomer.entity;
+import com.t2010a.applicationcustomer.util.DateTimeHelper;
+
 import java.time.LocalDateTime;
 public class Customer {
     private int Id;
@@ -120,5 +122,12 @@ public class Customer {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public String getDobString() {
+        if (this.dob!=null){
+            return DateTimeHelper.convertLocalDateTimeToString(this.dob);
+        }
+        return "";
     }
 }
