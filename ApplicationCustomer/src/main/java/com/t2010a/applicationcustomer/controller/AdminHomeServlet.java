@@ -9,6 +9,6 @@ import java.io.IOException;
 public class AdminHomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/admin/customers/home.jsp").forward(req,resp);
+        req.getRequestDispatcher("/admin/auth/home.jsp").forward(req,resp);
     }
 }

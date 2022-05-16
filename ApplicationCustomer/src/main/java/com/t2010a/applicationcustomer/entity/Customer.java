@@ -12,9 +12,7 @@ public class Customer {
     private LocalDateTime updatedAt;
     private int status; // xoá mềm
 
-    public Customer(){
 
-    }
     public Customer(int id, String name, String phone, String image, LocalDateTime dob, LocalDateTime createdAt, LocalDateTime updatedAt, int status) {
         this.Id = id;
         Name = name;
@@ -24,6 +22,21 @@ public class Customer {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.status = status;
+    }
+
+    public Customer() {
+        this.Name = "";
+        this.Phone ="" ;
+        this.Image = "";
+    }
+
+    public Customer(String name, String phone, String image) {
+        Name = name;
+        Phone = phone;
+        Image = image;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+        this.status = 1;
     }
 
     public Customer(int id, String name, String phone, String image, LocalDateTime dob) {
@@ -36,16 +49,18 @@ public class Customer {
         this.updatedAt = LocalDateTime.now();
         this.status = 1;
     }
-    public Customer(String name, String phone, String image, LocalDateTime dob) {
 
-        Name = name;
-        Phone = phone;
-        Image = image;
-        this.dob = dob;
+    public Customer(String name, String phone, String image, LocalDateTime dob) {
+        this.Name = name;
+        this.Phone = phone;
+        this.Image = image;
+        this.dob=dob;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
         this.status = 1;
     }
+
+
     @Override
     public String toString() {
         return "Customer{" +

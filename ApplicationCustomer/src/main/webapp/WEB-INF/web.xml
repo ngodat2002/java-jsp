@@ -17,7 +17,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminHomeServlet</servlet-name>
-        <url-pattern>/admin/customers/home</url-pattern>
+        <url-pattern>/admin/auth/home</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>CreateCustomerServlet</servlet-name>

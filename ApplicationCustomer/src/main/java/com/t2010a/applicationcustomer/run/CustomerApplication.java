@@ -123,7 +123,7 @@ public class CustomerApplication {
         String Phone = scanner.nextLine();
         System.out.println("Please enter Image");
         String Image = scanner.nextLine();
-        Customer customer =  new Customer(Name,Phone,Image,LocalDateTime.of(2002, 11, 11, 10, 10));
+        Customer customer =  new Customer(Name,Phone,Image);
         if (customerModel.save(customer)!=null){
             System.out.println("Create customer success!");
         }else {
