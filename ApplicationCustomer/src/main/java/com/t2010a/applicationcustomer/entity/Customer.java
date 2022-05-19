@@ -2,6 +2,8 @@ package com.t2010a.applicationcustomer.entity;
 import com.t2010a.applicationcustomer.util.DateTimeHelper;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+
 public class Customer {
     private int Id;
     private String Name;
@@ -11,6 +13,7 @@ public class Customer {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private int status; // xoá mềm
+    private HashMap<String, String> errors = new HashMap<>();
 
 
     public Customer(int id, String name, String phone, String image, LocalDateTime dob, LocalDateTime createdAt, LocalDateTime updatedAt, int status) {
@@ -60,6 +63,29 @@ public class Customer {
         this.status = 1;
     }
 
+    public boolean isValid(){
+       checkValidate();
+       return errors.size() ==0;
+    }
+
+    private void checkValidate() {
+        //validate du lieu theo kieu cui bap
+        if (Name == null || Name.length()==0){
+            errors.put("name","Please enter name");
+        }
+        if (Phone == null || Phone.length()==0){
+            errors.put("phone","Please enter phone");
+        }
+        if (Image == null || Image.length()==0){
+            errors.put("image","Please enter image");
+        }
+        //if(email==null || email.length()==0){
+        // errors.put("email","Please enter email")
+        //}else if(!ValidationUtil.checkEmail(email)){
+        // errors.put("email","Invalid email, please enter real email. For Example: ")
+        // }
+        //
+    }
 
     @Override
     public String toString() {
@@ -73,6 +99,10 @@ public class Customer {
                 ", updatedAt=" + updatedAt +
                 ", status=" + status +
                 '}';
+    }
+
+    public HashMap<String, String> getErrors() {
+        return errors;
     }
 
     public int getId() {
