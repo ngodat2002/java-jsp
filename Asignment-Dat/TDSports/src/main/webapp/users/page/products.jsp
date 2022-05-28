@@ -75,20 +75,19 @@
             <div class="border-bottom mb-4 pb-4">
                 <h5 class="font-weight-semi-bold mb-4">Filter by Categories</h5>
 
-                <form>
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" checked id="price-all">
-                        <label class="custom-control-label" for="price-all">All Categories</label>
+                <div class="navbar-nav w-100 overflow-hidden" style="height: 410px;margin-left: 10px;">
+                    <%
+                        for (int i = 0; i < listC.size(); i++) {
+                            Category category = listC.get(i);
+                    %>
 
-                    </div>
+                    <a href="/products/category?cid=<%=category.getId()%>" class="nav-item nav-link active"><%=category.getName()%></a>
 
-                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                        <input type="checkbox" class="custom-control-input" id="price-1">
-                        <label class="custom-control-label" for="price-1">$0 - $100</label>
+                    <%}%>
 
-                    </div>
+                </div>
 
-                    </form>
+
             </div>
             <!-- Price End -->
 
